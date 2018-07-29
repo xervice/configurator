@@ -1,7 +1,9 @@
 Configurator
 =====================
 
-[![Build Status](https://travis-ci.org/xervice/configurator).svg?branch=master)](https://travis-ci.org/xervice/configurator)
+[![Build Status](https://travis-ci.org/xervice/configurator.svg?branch=master)](https://travis-ci.org/xervice/configurator)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xervice/configurator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xervice/configurator/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/xervice/configurator/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xervice/configurator/?branch=master)
 
 Possibility to loop your step classes to complete a DataProvider.
 
