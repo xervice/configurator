@@ -13,9 +13,9 @@ use Xervice\Core\Business\Model\Factory\AbstractBusinessFactory;
 class ConfiguratorBusinessFactory extends AbstractBusinessFactory
 {
     /**
-     * @param \Xervice\Configurator\Business\Step\StepCollection $stepCollection
+     * @param \Xervice\Configurator\Business\Model\Step\StepCollection $stepCollection
      *
-     * @return \Xervice\Configurator\Business\Engine\ConfiguratorInterface
+     * @return \Xervice\Configurator\Business\Model\Engine\ConfiguratorInterface
      */
     public function createConfigurator(StepCollection $stepCollection): ConfiguratorInterface
     {

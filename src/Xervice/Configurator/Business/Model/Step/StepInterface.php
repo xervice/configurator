@@ -19,7 +19,7 @@ interface StepInterface
     public function done(): bool;
 
     /**
-     * @return bool
+     * @return void
      */
     public function execute(): void;
 
