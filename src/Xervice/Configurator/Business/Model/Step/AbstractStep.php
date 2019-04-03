@@ -1,13 +1,13 @@
-<?php
+<?php declare(strict_types=1);
 
 
-namespace Xervice\Configurator\Business\Step;
+namespace Xervice\Configurator\Business\Model\Step;
 
 
 use DataProvider\StepDataDataProvider;
-use Xervice\Core\Locator\AbstractWithLocator;
+use Xervice\Core\Plugin\AbstractBusinessPlugin;
 
-abstract class AbstractStep extends AbstractWithLocator implements StepInterface
+abstract class AbstractStep extends AbstractBusinessPlugin implements StepInterface
 {
     /**
      * @var \DataProvider\StepDataDataProvider

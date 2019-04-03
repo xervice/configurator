@@ -5,7 +5,7 @@ namespace XerviceTest\Configurator\Steps;
 
 
 use DataProvider\TestSchemaDataProvider;
-use Xervice\Configurator\Business\Step\AbstractStep;
+use Xervice\Configurator\Business\Model\Step\AbstractStep;
 
 class StepOne extends AbstractStep
 {

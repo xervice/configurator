@@ -1,13 +1,13 @@
-<?php
+<?php declare(strict_types=1);
 
 
-namespace Xervice\Configurator\Business\Step;
+namespace Xervice\Configurator\Business\Model\Step;
 
 
 class StepCollection implements \Iterator, \Countable
 {
     /**
-     * @var \Xervice\Configurator\Business\Step\StepInterface[]
+     * @var \Xervice\Configurator\Business\Model\Step\StepInterface[]
      */
     private $collection;
 
@@ -19,7 +19,7 @@ class StepCollection implements \Iterator, \Countable
     /**
      * Collection constructor.
      *
-     * @param \Xervice\Configurator\Business\Step\StepInterface[] $collection
+     * @param \Xervice\Configurator\Business\Model\Step\StepInterface[] $collection
      */
     public function __construct(array $collection)
     {
@@ -29,7 +29,7 @@ class StepCollection implements \Iterator, \Countable
     }
 
     /**
-     * @param \Xervice\Configurator\Business\Step\StepInterface $validator
+     * @param \Xervice\Configurator\Business\Model\Step\StepInterface $validator
      */
     public function add(StepInterface $validator): void
     {
@@ -37,7 +37,7 @@ class StepCollection implements \Iterator, \Countable
     }
 
     /**
-     * @return \Xervice\Configurator\Business\Step\StepInterface
+     * @return \Xervice\Configurator\Business\Model\Step\StepInterface
      */
     public function current(): StepInterface
     {

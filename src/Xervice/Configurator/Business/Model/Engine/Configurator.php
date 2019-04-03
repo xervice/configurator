@@ -1,24 +1,24 @@
-<?php
+<?php declare(strict_types=1);
 
 
-namespace Xervice\Configurator\Business\Engine;
+namespace Xervice\Configurator\Business\Model\Engine;
 
 
 use DataProvider\StepDataDataProvider;
-use Xervice\Configurator\Business\Exception\ConfiguratorException;
-use Xervice\Configurator\Business\Step\StepCollection;
+use Xervice\Configurator\Business\Model\Exception\ConfiguratorException;
+use Xervice\Configurator\Business\Model\Step\StepCollection;
 
 class Configurator implements ConfiguratorInterface
 {
     /**
-     * @var \Xervice\Configurator\Business\Step\StepCollection
+     * @var \Xervice\Configurator\Business\Model\Step\StepCollection
      */
     private $stepCollection;
 
     /**
      * Configurator constructor.
      *
-     * @param \Xervice\Configurator\Business\Step\StepCollection $stepCollection
+     * @param \Xervice\Configurator\Business\Model\Step\StepCollection $stepCollection
      */
     public function __construct(StepCollection $stepCollection)
     {
@@ -29,7 +29,7 @@ class Configurator implements ConfiguratorInterface
      * @param \DataProvider\StepDataDataProvider $dataProvider
      *
      * @return \DataProvider\StepDataDataProvider
-     * @throws \Xervice\Configurator\Business\Exception\ConfiguratorException
+     * @throws \Xervice\Configurator\Business\Model\Exception\ConfiguratorException
      */
     public function execute(StepDataDataProvider $dataProvider): StepDataDataProvider
     {

@@ -1,7 +1,7 @@
-<?php
+<?php declare(strict_types=1);
 
 
-namespace Xervice\Configurator\Business\Step;
+namespace Xervice\Configurator\Business\Model\Step;
 
 
 use DataProvider\StepDataDataProvider;

@@ -4,27 +4,27 @@ namespace XerviceTest\Configurator;
 
 use DataProvider\StepDataDataProvider;
 use DataProvider\TestSchemaDataProvider;
-use Xervice\Config\XerviceConfig;
-use Xervice\Configurator\Business\Step\StepCollection;
-use Xervice\Core\Locator\Dynamic\DynamicLocator;
-use Xervice\Core\Locator\Locator;
+use Xervice\Config\Business\XerviceConfig;
+use Xervice\Configurator\Business\Model\Step\StepCollection;
+use Xervice\Core\Business\Model\Locator\Dynamic\Business\DynamicBusinessLocator;
+use Xervice\Core\Business\Model\Locator\Locator;
+use Xervice\DataProvider\Business\DataProviderFacade;
 use Xervice\DataProvider\DataProviderConfig;
-use Xervice\DataProvider\DataProviderFacade;
 use XerviceTest\Configurator\Steps\StepOne;
 use XerviceTest\Configurator\Steps\StepTwo;
 
 /**
- * @method \Xervice\Configurator\ConfiguratorFacade getFacade()
+ * @method \Xervice\Configurator\Business\ConfiguratorFacade getFacade()
  */
 class IntegrationTest extends \Codeception\Test\Unit
 {
-    use DynamicLocator;
+    use DynamicBusinessLocator;
 
     protected function _before()
     {
-        XerviceConfig::getInstance()->getConfig()->set(DataProviderConfig::FILE_PATTERN, '*.dataprovider.xml');
+        XerviceConfig::set(DataProviderConfig::FILE_PATTERN, '*.dataprovider.xml');
         $this->getDataProviderFacade()->generateDataProvider();
-        XerviceConfig::getInstance()->getConfig()->set(DataProviderConfig::FILE_PATTERN, '*.testprovider.xml');
+        XerviceConfig::set(DataProviderConfig::FILE_PATTERN, '*.testprovider.xml');
         $this->getDataProviderFacade()->generateDataProvider();
     }
 
@@ -38,8 +38,7 @@ class IntegrationTest extends \Codeception\Test\Unit
      * @group Configurator
      * @group Integration
      *
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
-     * @throws \Xervice\Configurator\Business\Exception\ConfiguratorException
+     * @throws \Xervice\Configurator\Business\Model\Exception\ConfiguratorException
      */
     public function testHappyWay()
     {
@@ -69,11 +68,10 @@ class IntegrationTest extends \Codeception\Test\Unit
      * @group Configurator
      * @group Integration
      *
-     * @expectedException \Xervice\Configurator\Business\Exception\ConfiguratorException
+     * @expectedException \Xervice\Configurator\Business\Model\Exception\ConfiguratorException
      * @expectedExceptionMessage Step XerviceTest\Configurator\Steps\StepTwo is not ready, but all previous steps are done
      *
-     * @throws \Core\Locator\Dynamic\ServiceNotParseable
-     * @throws \Xervice\Configurator\Business\Exception\ConfiguratorException
+     * @throws \Xervice\Configurator\Business\Model\Exception\ConfiguratorException
      */
     public function testNotReady()
     {
